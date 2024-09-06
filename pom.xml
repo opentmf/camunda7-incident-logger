@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pia.commons</groupId>
 	<artifactId>camunda-incident-logger</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>camunda-incident-logger</name>
 	<description>Incident Logger for Camunda 7</description>
 	<properties>
@@ -75,7 +75,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:pia-commons/camunda-incident-logger.git</connection>
 		<developerConnection>scm:git:git@github.com:pia-commons/camunda-incident-logger.git</developerConnection>
-		<tag>camunda-incident-logger-1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<build>
