@@ -43,7 +43,7 @@ public class IncidentLogger extends DefaultIncidentHandler implements IncidentHa
           deploymentName = deployments.get(0).getName();
         }
         log.warn(
-            "Camunda Incident: '{}' --> '{} (version ${})' --> '{}'."
+            "Camunda Incident: '{}' --> '{} (version {})' --> '{}'."
                 + " '{}', processInstanceId: '{}' and message: '{}'",
             deploymentName,
             execution.getProcessDefinition().getName() != null

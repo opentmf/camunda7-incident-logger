@@ -24,9 +24,10 @@ Camunda Incident with no Execution Id.: IncidentType:${incidentType}, ProcessDef
 <dependency>
   <groupId>com.pia.commons</groupId>
   <artifactId>camunda-incident-logger</artifactId>
-  <version>1.0.0</version>
 </dependency> 
 ```
 ## Version History
 ### 1.0.0
 - Initial Release
+### 1.0.1
+- Updates to Camunda 7.22
