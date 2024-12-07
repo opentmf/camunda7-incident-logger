@@ -31,3 +31,5 @@ Camunda Incident with no Execution Id.: IncidentType:${incidentType}, ProcessDef
 - Initial Release
 ### 1.0.1
 - Updates to Camunda 7.22
+### 1.0.2
+- Updates Spring Boot to 3.4.0
