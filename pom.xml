@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.opentmf.camunda</groupId>
 	<artifactId>camunda7-incident-logger</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4-SNAPSHOT</version>
 	<name>camunda-incident-logger</name>
 
 	<description>
@@ -255,7 +255,7 @@
 		<url>https://github.com/opentmf/camunda7-incident-logger</url>
 		<connection>scm:git:git@github.com:opentmf/camunda7-incident-logger.git</connection>
 		<developerConnection>scm:git:git@github.com:opentmf/camunda7-incident-logger.git</developerConnection>
-		<tag>camunda7-incident-logger-1.0.3</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 </project>
