@@ -9,7 +9,7 @@ The log message format is:
 Camunda Incident: "${deploymentName}" --> "${processDefinitionName} (version ${processDefinitionVersion})" --> "${taskName}". ${incidentType}, processInstanceId: ${processInstanceId}, and message: ${exceptionMessage}
 ```
 
-Though not expected, theoretically in case camunda execution entity does not exist for an incident, it will print this message:
+Though not expected, theoretically in case camunda execution entity does not exist for an incident, it will print this message instead:
 
 ```
 Camunda Incident with no Execution Id.: IncidentType:${incidentType}, ProcessDefinitionId:${processDefinitionId}, FailedActivityId:${failedActivityId}, ActivityId:${activityId}
@@ -17,13 +17,28 @@ Camunda Incident with no Execution Id.: IncidentType:${incidentType}, ProcessDef
 
 ## Installation and Usage
 - Including the maven dependency is enough, no further configuration is necessary
-- The log level for "com.pia.camunda" must be at least WARN.
+- The log level for "org.opentmf.camunda" must be at least WARN.
 
-#### Maven Dependency
+## Maven Dependency
+### Import opentmf-commons-versions
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.opentmf</groupId>
+      <artifactId>opentmf-versions</artifactId>
+      <version>RELEASE</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+```
+### Add Maven Dependency
 ```xml
 <dependency>
-  <groupId>com.pia.commons</groupId>
-  <artifactId>camunda-incident-logger</artifactId>
+  <groupId>org.opentmf.camunda</groupId>
+  <artifactId>camunda7-incident-logger</artifactId>
 </dependency> 
 ```
 ## Version History
@@ -33,3 +48,6 @@ Camunda Incident with no Execution Id.: IncidentType:${incidentType}, ProcessDef
 - Updates to Camunda 7.22
 ### 1.0.2
 - Updates Spring Boot to 3.4.0
+### 1.0.3
+- Updates Spring Boot to 3.4.4
+- Initial Open Source Version
