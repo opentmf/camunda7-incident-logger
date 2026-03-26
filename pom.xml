@@ -4,7 +4,7 @@
 	<groupId>org.opentmf.camunda</groupId>
 	<artifactId>camunda7-incident-logger</artifactId>
   <name>camunda7-incident-logger</name>
-	<version>2.0.0-SNAPSHOT</version>
+	<version>2.0.0</version>
 
 	<description>
 		Writes easy-to-track log statements when an incident occurs in Camunda 7.
@@ -270,7 +270,7 @@
 		<url>https://github.com/opentmf/camunda7-incident-logger</url>
 		<connection>scm:git:git@github.com:opentmf/camunda7-incident-logger.git</connection>
 		<developerConnection>scm:git:git@github.com:opentmf/camunda7-incident-logger.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>camunda7-incident-logger-2.0.0</tag>
 	</scm>
 
 </project>
