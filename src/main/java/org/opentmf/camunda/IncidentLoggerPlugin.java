@@ -2,9 +2,9 @@ package org.opentmf.camunda;
 
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
-import org.camunda.bpm.engine.impl.cfg.AbstractProcessEnginePlugin;
-import org.camunda.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
-import org.camunda.bpm.engine.runtime.Incident;
+import org.cibseven.bpm.engine.impl.cfg.AbstractProcessEnginePlugin;
+import org.cibseven.bpm.engine.impl.cfg.ProcessEngineConfigurationImpl;
+import org.cibseven.bpm.engine.runtime.Incident;
 import org.springframework.context.annotation.Configuration;
 
 /**

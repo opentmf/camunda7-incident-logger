@@ -2,13 +2,13 @@ package org.opentmf.camunda;
 
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
-import org.camunda.bpm.engine.impl.context.Context;
-import org.camunda.bpm.engine.impl.incident.DefaultIncidentHandler;
-import org.camunda.bpm.engine.impl.incident.IncidentContext;
-import org.camunda.bpm.engine.impl.incident.IncidentHandler;
-import org.camunda.bpm.engine.impl.persistence.entity.DeploymentEntity;
-import org.camunda.bpm.engine.impl.persistence.entity.ExecutionEntity;
-import org.camunda.bpm.engine.runtime.Incident;
+import org.cibseven.bpm.engine.impl.context.Context;
+import org.cibseven.bpm.engine.impl.incident.DefaultIncidentHandler;
+import org.cibseven.bpm.engine.impl.incident.IncidentContext;
+import org.cibseven.bpm.engine.impl.incident.IncidentHandler;
+import org.cibseven.bpm.engine.impl.persistence.entity.DeploymentEntity;
+import org.cibseven.bpm.engine.impl.persistence.entity.ExecutionEntity;
+import org.cibseven.bpm.engine.runtime.Incident;
 
 /**
  * @author Cezmi Aslan
@@ -16,6 +16,9 @@ import org.camunda.bpm.engine.runtime.Incident;
 @Slf4j
 public class IncidentLogger extends DefaultIncidentHandler implements IncidentHandler {
 
+  /**
+   * @param type the incident handler type (e.g. {@code failedJob} or {@code failedExternalTask})
+   */
   public IncidentLogger(String type) {
     super(type);
   }

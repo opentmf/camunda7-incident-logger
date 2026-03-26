@@ -39,18 +39,9 @@ Camunda Incident with no Execution Id.: IncidentType:${incidentType}, ProcessDef
 <dependency>
   <groupId>org.opentmf.camunda</groupId>
   <artifactId>camunda7-incident-logger</artifactId>
-</dependency> 
+</dependency>
 ```
-## Version History
-### 1.0.0
-- Initial Release
-### 1.0.1
-- Updates to Camunda 7.22
-### 1.0.2
-- Updates Spring Boot to 3.4.0
-### 1.0.3
-- Updates Spring Boot to 3.4.4
-- Initial Open Source Version
-### 1.0.4
-- Updates Spring Boot to 3.5.6
-- Updates Camunda to 7.24
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a detailed list of changes per version.
