@@ -9,11 +9,9 @@ The log message format is:
 Camunda Incident: "${deploymentName}" --> "${processDefinitionName} (version ${processDefinitionVersion})" --> "${taskName}". ${incidentType}, processInstanceId: ${processInstanceId}, and message: ${exceptionMessage}
 ```
 
-Though not expected, theoretically in case camunda execution entity does not exist for an incident, it will print this message instead:
-
-```
-Camunda Incident with no Execution Id.: IncidentType:${incidentType}, ProcessDefinitionId:${processDefinitionId}, FailedActivityId:${failedActivityId}, ActivityId:${activityId}
-```
+Incidents without an execution entity (e.g. raised during process instance version
+migrations) are intentionally NOT logged - they are not actionable and only produce
+noise. `DefaultIncidentHandler` semantics are fully preserved either way.
 
 ## Installation and Usage
 - Including the maven dependency is enough, no further configuration is necessary

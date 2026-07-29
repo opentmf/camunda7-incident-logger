@@ -25,39 +25,34 @@ public class IncidentLogger extends DefaultIncidentHandler implements IncidentHa
 
   @Override
   public Incident handleIncident(IncidentContext context, String message) {
+    // Incidents without an execution (e.g. raised during process instance version
+    // migrations) are intentionally not logged - they are not actionable and only
+    // produce noise.
+    if (context.getExecutionId() == null) {
+      return super.handleIncident(context, message);
+    }
+
     try {
-      if (context.getExecutionId() == null) {
-        log.warn(
-            "Camunda Incident with no Execution Id.: IncidentType:'{}',"
-                + " ProcessDefinitionId: '{}',"
-                + " FailedActivityId: '{}',"
-                + " ActivityId: '{}'",
-            this.getIncidentHandlerType(),
-            context.getProcessDefinitionId(),
-            context.getFailedActivityId(),
-            context.getActivityId());
-      } else {
-        ExecutionEntity execution = Context.getCommandContext().getExecutionManager()
-            .findExecutionById(context.getExecutionId());
-        List<DeploymentEntity> deployments = Context.getCommandContext().getDeploymentManager()
-            .findDeploymentsByIds(execution.getProcessDefinition().getDeploymentId());
-        String deploymentName = null;
-        if (!deployments.isEmpty()) {
-          deploymentName = deployments.get(0).getName();
-        }
-        log.warn(
-            "Camunda Incident: '{}' --> '{} (version {})' --> '{}'."
-                + " '{}', processInstanceId: '{}' and message: '{}'",
-            deploymentName,
-            execution.getProcessDefinition().getName() != null
-                ? execution.getProcessDefinition().getName() : context.getActivityId(),
-            execution.getProcessDefinition().getVersion(),
-            execution.getActivity().getName(),
-            this.getIncidentHandlerType(),
-            execution.getProcessInstanceId(),
-            message
-        );
+      ExecutionEntity execution = Context.getCommandContext().getExecutionManager()
+          .findExecutionById(context.getExecutionId());
+      List<DeploymentEntity> deployments = Context.getCommandContext().getDeploymentManager()
+          .findDeploymentsByIds(execution.getProcessDefinition().getDeploymentId());
+      String deploymentName = null;
+      if (!deployments.isEmpty()) {
+        deploymentName = deployments.get(0).getName();
       }
+      log.warn(
+          "Camunda Incident: '{}' --> '{} (version {})' --> '{}'."
+              + " '{}', processInstanceId: '{}' and message: '{}'",
+          deploymentName,
+          execution.getProcessDefinition().getName() != null
+              ? execution.getProcessDefinition().getName() : context.getActivityId(),
+          execution.getProcessDefinition().getVersion(),
+          execution.getActivity().getName(),
+          this.getIncidentHandlerType(),
+          execution.getProcessInstanceId(),
+          message
+      );
     } catch (Throwable throwable) {
       log.error(
           "Exception while logging camunda incident. Please check incidents"
