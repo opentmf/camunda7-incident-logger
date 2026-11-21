@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+- Incidents without an execution id (for example, raised during process instance version migrations) are no longer logged; they are passed straight to the default incident handler.
 - Upgrades to **CibSeven 3.0.0** engine (from 2.2.0). The library uses only the engine API, so the starter artifact renames in CibSeven 3.0.0 do not affect it. The jar is binary compatible with CibSeven 2.2.0 engines: it references the same 19 engine members whether compiled against 2.2.0 or 3.0.0.
 
 ## [2.0.1] - 2026-06-01
